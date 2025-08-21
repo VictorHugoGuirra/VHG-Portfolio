@@ -1,0 +1,337 @@
+/* ===== Reset Básico ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: #f5f5f5;
+  line-height: 1.6;
+}
+
+/* ===== Cabeçalho / Navbar ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background: #1a1a2e;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  width: 60px; 
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.nav-links li {
+  display: inline-block;
+  margin-left: 25px;
+}
+
+.nav-links a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color .3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff4ecd;
+}
+
+/* ===== Hero ===== */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 10%;
+  background: linear-gradient(135deg, #ff4ecd, #4e9cff);
+  border-radius: 20px;
+  margin: 20px;
+  border: 1px solid #ff4ecd;
+}
+
+.hero-content {
+  flex: 1 1 350px;
+  color: #fff;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.hero-content .destaque {
+  color: #fff600;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.hero-content .btn {
+  display: inline-block;
+  padding: 10px 25px;
+  background: #fff600;
+  color: #1a1a2e;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all .3s ease;
+  text-align: center;
+  margin: 0 auto;
+  text-decoration: none;
+}
+
+.hero-content .btn:hover {
+  transform: translateY(-3px);
+  background: #ff4ecd;
+  color: #fff;
+}
+
+.hero-img {
+  flex: 1 1 250px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.hero-img img {
+  max-width: 80%;
+  border-radius: 20px;
+  transition: transform .3s ease;
+}
+
+.hero-img img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Sobre Mim ===== */
+.sobre {
+  padding: 60px 10%;
+  background: #1a1a2e;
+  border-radius: 20px;
+  margin: 20px auto;
+  max-width: 1000px;
+  border: 1px solid #ff4ecd;
+}
+
+.sobre h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #ff4ecd;
+}
+
+.sobre h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #4e9cff;
+}
+
+.sobre ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.sobre p {
+  margin-bottom: 15px;
+}
+
+/* ===== Projetos / Grid de Cards com Flip ===== */
+.projetos h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #fff600;
+  margin-bottom: 40px;
+  text-shadow: 3px 3px 10px #ff4ecd;
+}
+
+.grid-projetos {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 40px 10%;
+}
+
+/* ===== Card Flip ===== */
+.card {
+  perspective: 1000px;
+  height: 450px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  border: 1px solid #ff4ecd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: #25255a;
+  padding-top: 7px;
+}
+
+.card-front img,
+.card-back img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 250px;
+  border-bottom: 1px solid #ff4ecd;
+}
+
+.card-front h3,
+.card-back h3 {
+  margin: 45px 0 10px 0; /* margin-top ajustada para separar da imagem */
+  color: #ff4ecd;
+  text-align: center;
+}
+
+.card-front p,
+.card-back p {
+  margin: 0 15px 10px 15px;
+  color: #ddd;
+  font-size: 0.9rem;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.card-front a,
+.card-back a {
+  margin-bottom: 15px;
+  padding: 10px 20px;
+  background: #fff600;
+  color: #1a1a2e;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.card-front a:hover,
+.card-back a:hover {
+  background: #ff4ecd;
+  color: #fff;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* ===== Contato ===== */
+.contato {
+  padding: 60px 10%;
+  background: #1a1a2e;
+  border-radius: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  border: 1px solid #ff4ecd;
+}
+
+.contato input, .contato textarea, .contato button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: none;
+}
+
+.contato button {
+  background: #ff4ecd;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all .3s ease;
+}
+
+.contato button:hover {
+  transform: translateY(-2px);
+  background: #fff600;
+  color: #1a1a2e;
+}
+
+/* ===== Rodapé / Redes sociais ===== */
+footer {
+  text-align: center;
+  padding: 20px 10%;
+  background: #121212;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-links a {
+  display: inline-flex;
+  width: 45px;
+  height: 45px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #25255a;
+  color: #fff;
+  transition: all .3s ease;
+}
+
+.social-links a:hover {
+  transform: scale(1.1);
+  background: #ff4ecd;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-projetos {
+    padding: 20px;
+  }
+
+  .contato input, .contato textarea, .contato button {
+    padding: 10px;
+  }
+}
